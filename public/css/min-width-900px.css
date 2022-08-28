@@ -1,0 +1,56 @@
+body{
+    background-position: 40vw 2vh;
+}
+
+#hero, nav, .content{
+    width: 60vw;
+    margin: 0 auto;
+}
+
+nav{
+    margin: 3vw auto;
+}
+
+nav ul li{
+    font-size: 1.5vw;
+}
+
+#hero .title h2 {
+    font-size: 14vw;
+}
+
+.title h2 .alt{
+    font-size: 5vw;
+}
+
+#hero .title h1 {
+    font-size: 3.1vw;
+}
+
+#hero .hero-cta{
+	padding-right: 3vw;
+	font-size: 2.5vw;
+}
+
+.statement{
+    font-size: 3vw;
+}
+
+.regular{
+    font-size: 2.1vw;
+    width: 50vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+
+main{
+    padding-bottom: 20px;
+}
+footer{
+    position: absolute;
+    top: calc(10.4vw + 10vmin);
+}
+
+nav ul{
+    display: block;
+}
