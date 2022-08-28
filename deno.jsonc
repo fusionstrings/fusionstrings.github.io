@@ -1,0 +1,10 @@
+{
+  "importMap": "deno.importmap",
+  "tasks": {
+    "dev": "deno run --allow-net --allow-env --allow-read ./server.js",
+    "start": "deno run --import-map deno.importmap --allow-net --allow-env --allow-read ./server.tsx"
+  },
+  "compilerOptions": {
+    "allowJs": true
+  }
+}

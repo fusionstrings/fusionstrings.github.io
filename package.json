@@ -1,0 +1,13 @@
+{
+    "name": "@fusionstrings/fusionstrings.github.io",
+    "imports": {
+        "#reception": "./reception.js",
+        "#response": "./response.jsx",
+        "#machine": "./machine.jsx",
+        "#home": "./home.jsx"
+    },
+    "devDependencies": {
+        "@jspm/generator": "^1.0.0-beta.37",
+        "mkdirp": "^1.0.4"
+    }
+}
