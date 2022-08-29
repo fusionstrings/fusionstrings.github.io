@@ -61,10 +61,12 @@ main, footer {
     line-height: 1;
 }
 
-#hero .title h1{
-	font-size: 6vw;
+#hero .title h3{
+	font-size: 4vw;
     word-spacing: -2px;
     font-family: 'Playfair Display', serif;
+    font-family: 'Manrope', sans-serif;
+    line-height: 1;
 }
 
 #hero .title h1 .alt, #hero .title h2 .alt {
@@ -83,6 +85,7 @@ main, footer {
 	font-family: 'Arapey', serif;
 	font-weight: normal;
     display: block;
+    margin-top: 20px;
 }
 
 .statement{

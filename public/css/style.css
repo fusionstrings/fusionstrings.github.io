@@ -1,4 +1,4 @@
 @import url('https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css?v1');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Serif+Text&family=Amethysta&family=Playfair+Display:wght@400;700&family=Over+the+Rainbow&family=Dawning+of+a+New+Day&family=Bebas+Neue&family=Arapey&family=Francois+One&family=Quattrocento&family=ZCOOL+XiaoWei&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope&family=DM+Serif+Text&family=Amethysta&family=Playfair+Display:wght@400;700&family=Over+the+Rainbow&family=Dawning+of+a+New+Day&family=Bebas+Neue&family=Arapey&family=Francois+One&family=Quattrocento&family=ZCOOL+XiaoWei&display=swap');
 @import url('default.css');
 @import url('min-width-900px.css') (min-width: 900px);
