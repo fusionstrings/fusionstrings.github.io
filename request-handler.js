@@ -11,7 +11,7 @@ async function requestHandler(request) {
     }
 
     const pathnameHandlerID = pathname.replace('/', '#');
-    const pathnameHandler = pathnameHandlerID === '#' ? "@fusionstrings/fusionstrings.github.io" : `@fusionstrings/fusionstrings.github.io/${pathnameHandlerID}`;
+    const pathnameHandler = pathnameHandlerID === '#' ? "#home" : pathnameHandlerID;
 
     const { requestHandlerHTTP } = await import(pathnameHandler);
     return requestHandlerHTTP(request);
