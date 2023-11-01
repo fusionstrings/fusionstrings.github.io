@@ -1,7 +1,17 @@
 {
-  "importMap": "deno.importmap",
+  "imports": {
+    "#http/file_server": "https://deno.land/std@0.204.0/http/file_server.ts",
+    "#functions": "./functions.js",
+    "#reception": "./reception.js",
+    "#response": "./response.jsx",
+    "#machine": "./machine.jsx",
+    "#home": "./home.jsx",
+    "#on-listen": "./on-listen.ts",
+    "#request-handler": "./request-handler.js",
+    "@fusionstrings/fusionstrings.github.io": "./home.js"
+  },
   "tasks": {
-    "dev": "deno run --allow-net --allow-env --allow-read ./server.js",
+    "dev": "deno run --inspect --allow-net --allow-env --allow-read ./request-handler.js",
     "start": "deno run --import-map deno.importmap --allow-net --allow-env --allow-read ./server.tsx"
   },
   "compilerOptions": {

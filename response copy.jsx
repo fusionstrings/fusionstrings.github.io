@@ -5,14 +5,40 @@ import { h, renderSSR } from "nano-jsx";
 import { contentType } from "https://deno.land/std@0.153.0/media_types/mod.ts";
 import { extname } from "https://deno.land/std@0.153.0/path/mod.ts";
 
-function NotFound() {
-  const templateURL = new URL("./public/index.html", import.meta.url);
-  return fetch(templateURL);
+function Home() {
+  return "Hi";
 }
 
-function requestHandlerHome() {
+function NotFound() {
+  return 404;
+}
+
+async function requestHandlerHome() {
   const templateURL = new URL("./public/index.html", import.meta.url);
-  return fetch(templateURL);
+  const templateFileResponse = await fetch(templateURL);
+
+  const response = templateFileResponse.body
+    .pipeThrough(new TextDecoderStream())
+    .pipeThrough(
+      new TransformStream({
+        transform: (chunk, controller) => {
+          const PLACEHOLDER = "<!-- __CONTENT__ -->";
+
+          if (chunk.includes(PLACEHOLDER)) {
+            const content = renderSSR(<Home />);
+            controller.enqueue(chunk.replace(PLACEHOLDER, content));
+          } else {
+            controller.enqueue(chunk);
+          }
+        },
+      }),
+    )
+    .pipeThrough(new TextEncoderStream());
+
+  return new Response(response, {
+    status: templateFileResponse.status,
+    headers: templateFileResponse.headers,
+  });
 }
 
 /**
@@ -24,14 +50,11 @@ async function requestHandlerStaticResource(request) {
     const { pathname } = new URL(request.url);
     const resourcePath = `./public${pathname}`;
     const resourceURL = new URL(resourcePath, import.meta.url);
-    const response = await fetch(resourceURL.href);
+    const response =  await fetch(resourceURL.href);
     //const response = await Deno.readFile(`./public${pathname}`);
 
     return new Response(response.body, {
-      headers: {
-        ...response.headers,
-        "content-type": contentType(extname(pathname)),
-      },
+      headers: { ...response.headers, "content-type": contentType(extname(pathname)) },
     });
   } catch (error) {
     return new Response(error.message || error.toString(), { status: 500 });
@@ -51,7 +74,6 @@ const register = {
   "/favicon-32x32.png": requestHandlerStaticResource,
   "/images/fusionstrings-logo-alt-optimized.svg": requestHandlerStaticResource,
   "/images/iceberg-transparent-optimized.svg": requestHandlerStaticResource,
-  "/pdf/dilip-shukla-resume.pdf": requestHandlerStaticResource,
   "/site.webmanifest": requestHandlerStaticResource,
 };
 
