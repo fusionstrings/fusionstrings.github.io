@@ -7,7 +7,7 @@
   },
   "tasks": {
     "dev": "deno run --inspect --allow-net --allow-env --allow-read ./request-handler.js",
-    "start": "deno run --import-map deno.importmap --allow-net --allow-env --allow-read ./server.tsx"
+    "start": "deno run --allow-net --allow-env --allow-read ./request-handler.js"
   },
   "compilerOptions": {
     "allowJs": true

@@ -19,4 +19,4 @@ jobs:
         with:
           project: fusionstrings # the name of the project on Deno Deploy
           entrypoint: request-handler.js # the entrypoint to deploy
-          import-map: deno.json
+          import-map: importmap.json
