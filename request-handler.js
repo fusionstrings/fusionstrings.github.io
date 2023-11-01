@@ -1,4 +1,4 @@
-import { serveDir } from "#http/file_server";
+import { serveDir } from "https://deno.land/std@0.204.0/http/file_server.ts";
 
 async function requestHandler(request) {
   try {
