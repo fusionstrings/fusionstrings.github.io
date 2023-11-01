@@ -1,6 +1,6 @@
 {
   "imports": {
-    "#http/file_server": "https://deno.land/std@0.204.0/http/file_server.ts",
+    "http/file_server": "https://deno.land/std@0.204.0/http/file_server.ts",
     "#functions": "./functions.js",
     "#request-handler": "./request-handler.js",
     "#home": "./home.js"
