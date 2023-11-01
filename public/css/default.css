@@ -3,7 +3,7 @@ body{
     font-family: 'Quattrocento', serif;
     color: #000;
     font-size: 5vw;
-    background: #fff url(/img/iceberg-transparent-optimized.svg) 50vw 2vh no-repeat;
+    background: #fff url(/images/iceberg-transparent-optimized.svg) 50vw 2vh no-repeat;
     background-size: contain;
     min-height: 100vh;
     margin: 0;
@@ -16,7 +16,7 @@ header{
 
 h1#logo { 
     /* font-family: 'Francois One', sans-serif;
-    background: transparent url(/img/fusionstrings-logo-alt-optimized.svg) center center no-repeat;
+    background: transparent url(/images/fusionstrings-logo-alt-optimized.svg) center center no-repeat;
 	background-size: contain;
     height: 10vmin;
     padding: 0;
@@ -30,12 +30,12 @@ h1#logo a{
     display: inline-block;
 }
 
-h1#logo img{
+h1#logo images{
     height: 10vmin;
 }
 /* h1#logo::after{
 	content: "";
-    background: transparent url(/img/अथातो-घुमक्कड़.svg) center center no-repeat;
+    background: transparent url(/images/अथातो-घुमक्कड़.svg) center center no-repeat;
     height: 33px;
     width: 100vw;
     display: block;
@@ -110,7 +110,7 @@ main, footer {
 	margin-top: 2vw;
 	font-family: 'Bebas Neue', cursive;
 	display: inline-block;
-    background: transparent url(/img/pdf-file.svg) right center no-repeat;
+    background: transparent url(/images/pdf-file.svg) right center no-repeat;
 	background-size: contain;
 	padding-right: 6vw;
     background-size: 15%;
