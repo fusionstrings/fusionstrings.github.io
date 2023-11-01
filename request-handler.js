@@ -1,4 +1,4 @@
-import { serveDir } from "http/file_server";
+import { serveDir } from "$std/http/file_server.ts";
 
 async function requestHandler(request) {
   try {
