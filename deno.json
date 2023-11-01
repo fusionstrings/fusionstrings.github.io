@@ -1,8 +1,6 @@
 {
   "imports": {
-    "$std/": "https://deno.land/std@0.204.0/",
     "#functions": "./functions.js",
-    "#request-handler": "./request-handler.js",
     "#home": "./home.js"
   },
   "tasks": {
