@@ -1,6 +1,5 @@
 {
   "imports": {
-    "$std/": "https://deno.land/std@0.204.0/",
     "#functions": "./functions.js",
     "#home": "./home.js"
   },
