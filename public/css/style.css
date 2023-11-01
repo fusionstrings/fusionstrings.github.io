@@ -12,7 +12,7 @@ body{
 	font-family: 'Arapey', serif;
     color: #000;
     font-size: var(--font-size-md);
-    background: #fff url(/img/iceberg-transparent-optimized.svg) 50vw 2vh no-repeat;
+    background: #fff url(/images/iceberg-transparent-optimized.svg) 50vw 2vh no-repeat;
     background-size: contain;
     min-height: 100vh;
     margin: 0;
@@ -32,7 +32,7 @@ h1#logo a{
     display: inline-block;
 }
 
-h1#logo img{
+h1#logo images{
     height: 10vmin;
 }
 
@@ -91,7 +91,7 @@ main, footer {
 	margin-top: 2vw;
 	font-family: 'Bebas Neue', cursive;
 	display: inline-block;
-    background: transparent url(/img/pdf-file.svg) right center no-repeat;
+    background: transparent url(/images/pdf-file.svg) right center no-repeat;
 	background-size: contain;
 	padding-right: 6vw;
     background-size: 15%;
