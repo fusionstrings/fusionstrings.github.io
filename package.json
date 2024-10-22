@@ -4,6 +4,7 @@
 	"description": "website",
 	"exports": {
 		".": "./www/dom/home.js",
+		"./fullfrontal": "./www/dom/fullfrontal.js",
 		"./custom-elements/markdown": "./www/custom-elements/markdown.js"
 	},
 	"imports": {
