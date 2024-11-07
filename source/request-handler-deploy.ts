@@ -9,14 +9,11 @@ async function requestHandler(request: Request): Promise<Response> {
 	try {
 		const { pathname } = new URL(request.url);
 
-		const pathnameHandlerID = pathname.replace('/', '#');
-		const pathnameHandler = pathnameHandlerID === '#'
-			? '#home'
-			: pathnameHandlerID;
+		const requestHandler = pathname.replace('/', '#');
 
-		if (pathnameHandler in browserImportmap.imports) {
+		if (requestHandler in browserImportmap.imports) {
 			const resourcePath =
-				browserImportmap.imports[pathnameHandler as BrowserAssets];
+				browserImportmap.imports[requestHandler as BrowserAssets];
 
 			if (resourcePath.startsWith('./')) {
 				return serveFile(request, resourcePath);
@@ -25,7 +22,7 @@ async function requestHandler(request: Request): Promise<Response> {
 			return fetch(resourcePath);
 		}
 
-		const { requestHandlerHTTP } = await import(`#home`);
+		const { requestHandlerHTTP } = await import(`#`);
 		return requestHandlerHTTP();
 	} catch (error: unknown) {
 		console.error((error as Error).message || (error as Error).toString());
