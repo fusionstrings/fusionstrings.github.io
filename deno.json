@@ -33,7 +33,6 @@
 	"exports": {
 		".": "./source/home.ts",
 		"./1729": "./server.ts",
-		"./functions/fullfrontal/projects": "./source/functions/fullfrontal-projects.ts",
 		"./request-handler": "./source/request-handler.ts"
 	},
 	"imports": {
@@ -46,6 +45,8 @@
 		"#comark": "https://deno.land/x/comrak@0.1.1/mod.ts",
 		"#custom-elements/markdown": "./source/custom-elements/markdown.ts",
 		"#functions/deploy": "./source/functions/deploy.ts",
+		"#functions/fullfrontal/projects": "./source/functions/fullfrontal-projects.ts",
+		"#functions/fullfrontal/projects/deployments": "./source/functions/fullfrontal-projects-deployments.ts",
 		"#on-listen": "./source/on-listen.ts",
 		"linkedom": "npm:linkedom@^0.18.5"
 	},

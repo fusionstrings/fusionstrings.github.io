@@ -41,14 +41,10 @@ function deleteProject(projectId: string) {
 			headers,
 		},
 	);
-
-	// const project = await response.json();
-	// console.table(project);
-	// return project;
 }
 
-async function createDeployment(project: { id: string; name: string }) {
-	const response = await fetch(`${API}/projects/${project.id}/deployments`, {
+function deployProject(projectID: string) {
+	return fetch(`${API}/projects/${projectID}/deployments`, {
 		method: 'POST',
 		headers,
 		body: JSON.stringify({
@@ -57,22 +53,14 @@ async function createDeployment(project: { id: string; name: string }) {
 				'main.ts': {
 					'kind': 'file',
 					'content':
-						`export default { async fetch(req) { return new Response("Hello, World!"); } }`,
+						`export default { async fetch(req) { return new Response("Hello Fullfrontal"); } }`,
 					'encoding': 'utf-8',
 				},
 			},
 			envVars: {},
 		}),
 	});
-
-	const deployment = await response.json();
-	console.table(deployment);
-
-	console.log(deployment.status);
-	console.log(
-		'Visit your site here:',
-		`https://${project.name}-${deployment.id}.deno.dev`,
-	);
+	
 }
 
-export { createProject, deleteProject, getProjects };
+export { createProject, deleteProject, getProjects, deployProject };

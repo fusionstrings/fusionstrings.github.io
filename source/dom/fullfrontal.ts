@@ -15,8 +15,17 @@ async function handleCreateProject(event: SubmitEvent) {
 		method,
 		body: JSON.stringify(data),
 	});
+
 	const responseData = await response.json();
 	console.log(responseData);
+
+	if (!response.ok) {
+		currentTarget.insertAdjacentHTML(
+			'beforebegin',
+			`<p class="error">${responseData.message}</p>`,
+		);
+		throw new Error(responseData.message);
+	}
 	// document.querySelectorAll("fullfrontal-contact-form, fullfrontal-contact-form-submit").forEach(element => {
 	// 	element.classList.toggle('hide');
 	// });
@@ -25,9 +34,7 @@ async function handleCreateProject(event: SubmitEvent) {
 function handleDeleteteProject(event: MouseEvent) {
 	event.preventDefault();
 
-	const currentTarget = event.currentTarget as HTMLButtonElement;
-
-	const { value } = currentTarget;
+	const { value } = event.currentTarget as HTMLButtonElement;
 
 	console.log(value);
 
@@ -35,6 +42,29 @@ function handleDeleteteProject(event: MouseEvent) {
 		method: 'DELETE',
 		body: JSON.stringify({ id: value }),
 	});
+}
+
+async function handleDeployProject(event: MouseEvent) {
+	event.preventDefault();
+
+	const { value: projectID } = event.currentTarget as HTMLButtonElement;
+
+	const response = await fetch(
+		`/functions/fullfrontal/projects/deployments`,
+		{
+			method: 'POST',
+			body: JSON.stringify({ projectID }),
+		},
+	);
+
+	const deployment = await response.json();
+	console.table(deployment);
+
+	console.log(deployment.status);
+	console.log(
+		'Visit your site here:',
+		`https://${'project.name'}-${deployment.id}.deno.dev`,
+	);
 }
 
 async function main() {
@@ -48,6 +78,7 @@ async function main() {
 
 	const url = new URL('/functions/fullfrontal/projects', import.meta.url)
 		.toString();
+
 	const { default: projects } = await import(url, {
 		with: { type: 'json' },
 	});
@@ -60,14 +91,23 @@ async function main() {
 		projects.map((project: { name: string; id: string }) => {
 			const li = document.createElement('li');
 			li.innerHTML =
-				`<div><p class="project-name">${project.name}</p><p class="project-id">${project.id}</p></div><div><button value="${project.id}" name="delete-project">delete</button></div>`;
+				`<div><p class="project-name">${project.name}</p><p class="project-id">${project.id}</p></div><div><button value="${project.id}" name="delete-project">delete</button> <button value="${project.id}" name="deploy-project">deploy</button></div>`;
 			projectsListingElement.append(li);
+
 			const projectDeleteButton = li.querySelector(
-				`[value="${project.id}"]`,
+				`[value="delete-project"]`,
 			) as HTMLButtonElement;
 
 			if (projectDeleteButton) {
 				projectDeleteButton.onclick = handleDeleteteProject;
+			}
+
+			const projectDeployButton = li.querySelector(
+				`[name="deploy-project"]`,
+			) as HTMLButtonElement;
+
+			if (projectDeployButton) {
+				projectDeployButton.onclick = handleDeployProject;
 			}
 		});
 	}

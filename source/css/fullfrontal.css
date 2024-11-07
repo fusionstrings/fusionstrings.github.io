@@ -90,6 +90,10 @@ h1, h2, h3, h4, h5, h6, .bold {
 	font-style: normal;
 }
 
+.error {
+	color: #ff0088;
+	padding: 15px;
+}
 main fusionstrings-markdown {
 	h2,
 	h2 + p {

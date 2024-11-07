@@ -28,7 +28,7 @@ async function requestHandlerHTTP() {
 		//     headers: { "content-type": "text/html" },
 		// });
 	} catch (error) {
-		console.error(error.message || error.toString());
+		console.error((error as Error).message || (error as Error).toString());
 
 		return new Response('404', {
 			headers: { 'content-type': 'text/html' },
