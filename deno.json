@@ -31,23 +31,22 @@
 		"include": []
 	},
 	"exports": {
-		".": "./server.ts",
-		"./home": "./source/home.ts",
-		"./request-handler": "./source/request-handler.ts",
-		"./functions/fullfrontal/projects": "./source/functions/fullfrontal-projects.ts"
+		".": "./source/home.ts",
+		"./1729": "./server.ts",
+		"./functions/fullfrontal/projects": "./source/functions/fullfrontal-projects.ts",
+		"./request-handler": "./source/request-handler.ts"
 	},
 	"imports": {
 		"@deno/dnt": "jsr:@deno/dnt@^0.41.3",
 		"@deno/emit": "jsr:@deno/emit@^0.45.0",
 		"@std/http": "jsr:@std/http@^1.0.7",
+		"#": "./source/home.ts",
 		"#404": "./source/404.ts",
 		"#browser-importmap": "./source/importmaps/importmap.json",
 		"#comark": "https://deno.land/x/comrak@0.1.1/mod.ts",
 		"#custom-elements/markdown": "./source/custom-elements/markdown.ts",
 		"#functions/deploy": "./source/functions/deploy.ts",
-		"#home": "./source/home.ts",
 		"#on-listen": "./source/on-listen.ts",
-		"#server-importmap": "./deno.json",
 		"linkedom": "npm:linkedom@^0.18.5"
 	},
 	"tasks": {

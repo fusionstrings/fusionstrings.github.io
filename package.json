@@ -10,5 +10,8 @@
 	"imports": {
 		"#custom-elements/markdown": "./www/custom-elements/markdown.js"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"linkedom": "^0.18.5"
+	}
 }

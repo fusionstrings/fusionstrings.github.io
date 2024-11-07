@@ -1,84 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+		<meta
+			name="description"
+			content="Dilip Kr. Shukla, a passionate frontend web developer, creates immersive user experiences.  View portfolio and connect on Github, X and LinkedIn."
+		/>
+		<meta
+			name="keywords"
+			content="frontend web developer, web development, web design, user experience, digital solutions, stockholm"
+		/>
 
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="description"
-        content="Dilip Kr. Shukla, a passionate frontend web developer, creates immersive user experiences.  View portfolio and connect on Github, X and LinkedIn.">
-    <meta name="keywords"
-        content="frontend web developer, web development, web design, user experience, digital solutions, stockholm">
+		<meta property="og:title" content="Dilip - Frontend Web Developer" />
+		<meta
+			property="og:description"
+			content="Explore the portfolio of Dilip, a passionate Frontend Web Developer dedicated to crafting immersive user experiences."
+		/>
+		<meta property="og:url" content="https://www.fusionstrings.com/" />
+		<meta
+			property="og:image"
+			content="https://www.fusionstrings.com/images/fusionstrings.jpg"
+		/>
 
-    <meta property="og:title" content="Dilip - Frontend Web Developer" />
-    <meta property="og:description"
-        content="Explore the portfolio of Dilip, a passionate Frontend Web Developer dedicated to crafting immersive user experiences." />
-    <meta property="og:url" content="https://www.fusionstrings.com/" />
-    <meta property="og:image" content="https://www.fusionstrings.com/images/fusionstrings.jpg" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@fusionstrings" />
+		<meta name="twitter:title" content="Dilip - Frontend Web Developer" />
+		<meta
+			name="twitter:description"
+			content="Explore the portfolio of Dilip, a passionate Frontend Web Developer dedicated to crafting immersive user experiences."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://www.fusionstrings.com/images/fusionstrings.jpg"
+		/>
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@fusionstrings" />
-    <meta name="twitter:title" content="Dilip - Frontend Web Developer" />
-    <meta name="twitter:description"
-        content="Explore the portfolio of Dilip, a passionate Frontend Web Developer dedicated to crafting immersive user experiences." />
-    <meta name="twitter:image" content="https://www.fusionstrings.com/images/fusionstrings.jpg" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="images/apple-touch-icon.png"
+		/>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="images/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="images/favicon-16x16.png"
+		/>
+		<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+		<link
+			rel="mask-icon"
+			href="images/safari-pinned-tab.svg"
+			color="#5bbad5"
+		/>
+		<link rel="manifest" href="site.webmanifest" />
 
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="manifest" href="site.webmanifest">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Arapey&display=swap">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" media="(min-width: 700px)" href="css/min-width-700px.css">
-    <link rel="stylesheet" media="(min-width: 900px)" href="css/min-width-900px.css">
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Arapey&display=swap"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			rel="stylesheet"
+			media="(min-width: 700px)"
+			href="css/min-width-700px.css"
+		/>
+		<link
+			rel="stylesheet"
+			media="(min-width: 900px)"
+			href="css/min-width-900px.css"
+		/>
 
-    <title>Dilip Kr. Shukla (fusionstrings): Experienced Frontend Developer | Crafting Engaging Web Experiences</title>
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "Person",
-          "name": "Dilip",
-          "url": "https://www.fusionstrings.com/",
-          "image": "https://www.fusionstrings.com/dilip-kumar-shukla.jpg",
-          "jobTitle": "Frontend Web Developer",
-          "description": "Passionate about crafting immersive user experiences for the web.",
-          "sameAs": [
-            "https://github.com/fusionstrings",
-            "https://x.com/fusionstrings",
-            "https://www.linkedin.com/in/fusionstrings"
-          ]
-        }
-      </script>
-</head>
+		<title>
+			Dilip Kr. Shukla (fusionstrings): Experienced Frontend Developer |
+			Crafting Engaging Web Experiences
+		</title>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org/",
+				"@type": "Person",
+				"name": "Dilip",
+				"url": "https://www.fusionstrings.com/",
+				"image": "https://www.fusionstrings.com/dilip-kumar-shukla.jpg",
+				"jobTitle": "Frontend Web Developer",
+				"description": "Passionate about crafting immersive user experiences for the web.",
+				"sameAs": [
+					"https://github.com/fusionstrings",
+					"https://bsky.app/profile/fusionstrings.com",
+					"https://x.com/fusionstrings",
+					"https://www.linkedin.com/in/fusionstrings"
+				]
+			}
+		</script>
+	</head>
 
-<body>
-    <header>
-        <h1><a href="/">fusionstrings: Frontend Web Developer</a></h1>
-    </header>
+	<body>
+		<header>
+			<h1><a href="/">fusionstrings: Frontend Web Developer</a></h1>
+		</header>
 
-    <nav>
-        <fusionstrings-markdown src="/docs/nav.md"></fusionstrings-markdown>
-    </nav>
+		<nav>
+			<fusionstrings-markdown src="/docs/nav.md"></fusionstrings-markdown>
+		</nav>
 
-    <main>
-        <fusionstrings-markdown src="/docs/main.md"></fusionstrings-markdown>
-    </main>
+		<main>
+			<fusionstrings-markdown src="/docs/main.md"></fusionstrings-markdown
+			>
+		</main>
 
-    <footer>
-        &copy; 2024
-    </footer>
-</body>
-
+		<footer>
+			&copy; 2024
+		</footer>
+	</body>
 </html>
