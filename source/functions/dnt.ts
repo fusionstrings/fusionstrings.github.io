@@ -8,6 +8,9 @@ await build({
 	entryPoints: ['source/dom/home.ts', {
 		name: './custom-elements/markdown',
 		path: 'source/custom-elements/markdown.ts',
+	}, {
+		name: './dom/fullfrontal',
+		path: 'source/dom/fullfrontal.ts',
 	}],
 	outDir: OUT_DIR,
 	shims: {
@@ -19,7 +22,7 @@ await build({
 	skipSourceOutput: false,
 	importMap: 'deno.json',
 	compilerOptions: {
-		lib: ['ESNext', 'DOM'],
+		lib: ['ESNext', 'DOM', 'DOM.Iterable'],
 		target: 'Latest',
 	},
 	package: {

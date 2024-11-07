@@ -1,0 +1,66 @@
+// 1.) Get API access info ready
+const accessToken = Deno.env.get('DEPLOY_ACCESS_TOKEN');
+const organizationId = Deno.env.get('DEPLOY_ORG_ID');
+const API = 'https://api.deno.com/v1';
+
+console.log('accessToken: ', accessToken);
+console.log('organizationId: ', organizationId);
+
+const headers = {
+	Authorization: `Bearer ${accessToken}`,
+	'Content-Type': 'application/json',
+};
+
+function createProject({ name } = { name: null }) {
+	return fetch(
+		`${API}/organizations/${organizationId}/projects`,
+		{
+			method: 'POST',
+			headers,
+			body: JSON.stringify({
+				name,
+			}),
+		},
+	);
+}
+
+function getProjects() {
+	return fetch(
+		`${API}/organizations/${organizationId}/projects`,
+		{
+			headers,
+		},
+	);
+}
+
+function deleteProject(projectId: string) {
+	return fetch(
+		`${API}/projects/${projectId}`,
+		{
+			method: 'DELETE',
+			headers,
+		},
+	);
+}
+
+function deployProject(projectID: string) {
+	return fetch(`${API}/projects/${projectID}/deployments`, {
+		method: 'POST',
+		headers,
+		body: JSON.stringify({
+			entryPointUrl: 'main.ts',
+			assets: {
+				'main.ts': {
+					'kind': 'file',
+					'content':
+						`export default { async fetch(req) { return new Response("Hello Fullfrontal"); } }`,
+					'encoding': 'utf-8',
+				},
+			},
+			envVars: {},
+		}),
+	});
+	
+}
+
+export { createProject, deleteProject, getProjects, deployProject };

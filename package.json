@@ -4,10 +4,14 @@
 	"description": "website",
 	"exports": {
 		".": "./www/dom/home.js",
+		"./fullfrontal": "./www/dom/fullfrontal.js",
 		"./custom-elements/markdown": "./www/custom-elements/markdown.js"
 	},
 	"imports": {
 		"#custom-elements/markdown": "./www/custom-elements/markdown.js"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"linkedom": "^0.18.5"
+	}
 }

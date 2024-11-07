@@ -31,25 +31,27 @@
 		"include": []
 	},
 	"exports": {
-		".": "./server.ts",
-		"./home": "./source/home.ts",
+		".": "./source/home.ts",
+		"./1729": "./server.ts",
 		"./request-handler": "./source/request-handler.ts"
 	},
 	"imports": {
 		"@deno/dnt": "jsr:@deno/dnt@^0.41.3",
 		"@deno/emit": "jsr:@deno/emit@^0.45.0",
 		"@std/http": "jsr:@std/http@^1.0.7",
+		"#": "./source/home.ts",
 		"#404": "./source/404.ts",
 		"#browser-importmap": "./source/importmaps/importmap.json",
 		"#comark": "https://deno.land/x/comrak@0.1.1/mod.ts",
 		"#custom-elements/markdown": "./source/custom-elements/markdown.ts",
-		"#home": "./source/home.ts",
+		"#functions/deploy": "./source/functions/deploy.ts",
+		"#functions/fullfrontal/projects": "./source/functions/fullfrontal-projects.ts",
+		"#functions/fullfrontal/projects/deployments": "./source/functions/fullfrontal-projects-deployments.ts",
 		"#on-listen": "./source/on-listen.ts",
-		"#server-importmap": "./deno.json",
 		"linkedom": "npm:linkedom@^0.18.5"
 	},
 	"tasks": {
-		"dev": "deno task dom && deno serve --allow-net --allow-env --allow-read --watch source/request-handler.ts",
+		"dev": "deno task dom && deno serve --env --allow-net --allow-env --allow-read --watch source/request-handler.ts",
 		"dnt": "deno run --allow-env --allow-read --allow-write --allow-net --allow-run source/functions/dnt.ts",
 		"dom": "deno task dnt && deno run --allow-read --allow-ffi --allow-env --allow-sys --allow-write npm:pkgroll --src package/esm --dist www --sourcemap",
 		"start": "deno run --allow-net --allow-env --allow-read server.ts",

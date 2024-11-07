@@ -12,6 +12,9 @@
     },
     "./custom-elements/markdown": {
       "import": "./esm/custom-elements/markdown.js"
+    },
+    "./dom/fullfrontal": {
+      "import": "./esm/dom/fullfrontal.js"
     }
   },
   "scripts": {
